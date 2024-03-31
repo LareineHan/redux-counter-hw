@@ -6,10 +6,10 @@ const Box = () => {
 	const count = useSelector((state) => state.count);
 
 	return (
-		<div>
-			Box:{count}
+		<>
+			<h1>ver2. 🥡 {count}</h1>
 			<GrandsonBox />
-		</div>
+		</>
 	);
 };
 

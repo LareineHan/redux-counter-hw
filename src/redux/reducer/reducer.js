@@ -1,4 +1,5 @@
 let initialState = {
+	login: { id: '', pw: '' },
 	// state를 만들어준다.
 	count: 0,
 };
@@ -16,10 +17,18 @@ function reducer(state = initialState, action) {
 		case 'DECREMENT':
 			return { ...state, count: state.count - action.payload.num };
 		case 'LOGIN':
-			return { ...state, id: action.payload.id, pw: action.payload.pw };
+			return {
+				...state,
+				login: { id: action.payload.login.id, pw: action.payload.login.pw },
+			};
+		case 'LOGOUT':
+			return {
+				...state,
+				login: { id: '', pw: '' },
+			};
 		default:
 			return { ...state };
 	}
 }
-
+console.log(initialState);
 export default reducer;
